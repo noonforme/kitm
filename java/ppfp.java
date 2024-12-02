@@ -221,16 +221,12 @@ public class ppfp {
                         break;
                     }
 
-                    Product product;
-                    if (category.equals("electronics")) {
-                        product = new Electronics(productName, price);
-                    } else if (category.equals("food")) {
-                        product = new Food(productName, price);
-                    } else if (category.equals("clothing")) {
-                        product = new Clothing(productName, price);
-                    } else {
-                        product = new GenericProduct(productName, price, category);
-                    }
+                    Product product = switch (category) {
+                        case "electronics" -> new Electronics(productName, price);
+                        case "food" -> new Food(productName, price);
+                        case "clothing" -> new Clothing(productName, price);
+                        default -> new GenericProduct(productName, price, category);
+                    };
 
                     manager.addProductToCategory(category, product);
                     break;
