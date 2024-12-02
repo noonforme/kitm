@@ -176,7 +176,7 @@ class ProductManager {
     }
 }
 
-public class Main {
+public class ppfp {
     public static void main(String[] args) {
         ProductManager manager = new ProductManager();
         Scanner scanner = new Scanner(System.in);
